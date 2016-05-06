@@ -4,7 +4,7 @@ $(document).ready(function() {
 });
 
 function clearGridButtonPress() {
-	var size = prompt("Yo, how big (16-400)?");
+	var size = prompt("Yo! How big (16-400)?");
 	if (size != null && size >15 && size < 401) {
 		deleteGrid();
 		drawGrid(size);
@@ -21,10 +21,10 @@ function drawGrid(gridWidth) {
 	while(x<totalSquares) {
 		if (x==0 || x%gridWidth == 0) {
 			curContainerId += 1;
-			$('body').append("<div class='container' id='container" + (curContainerId) + "'></div>");
+			$('body').append("<div class='container' id='container" + curContainerId.toString() + "'></div>");
 		}
 
-		$('#container' + curContainerId).append("<div class='square' id='square" + (x+1) + "'></div>");
+		$('#container' + curContainerId.toString()).append("<div class='square' id='square" + (x+1).toString() + "'></div>");
 		x+=1;
 	};
 	var cw = $('.square').width();
